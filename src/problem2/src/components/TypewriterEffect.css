@@ -1,0 +1,106 @@
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.typewriter-static {
+  color: #1a1a2e;
+}
+
+.typewriter-dynamic {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 0 8px;
+  min-width: 180px;
+  min-height: 1.2em;
+  transition: all 0.3s ease;
+}
+
+/* Default state - pink gradient text */
+.typewriter-dynamic .typewriter-text {
+  display: inline-flex;
+  background: linear-gradient(135deg, #FF007A 0%, #FF5CAA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.typewriter-char {
+  display: inline-block;
+}
+
+/* Highlight state - Pink brand color */
+.typewriter-dynamic.highlight {
+  background: linear-gradient(135deg, #FF007A 0%, #FF5CAA 100%);
+  border-radius: 8px;
+  padding: 2px 12px;
+  margin: -2px 0;
+  animation: highlight-pop 0.3s ease-out;
+  box-shadow: 0 4px 20px rgba(255, 0, 122, 0.4);
+}
+
+.typewriter-dynamic.highlight .typewriter-text {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: white;
+  background-clip: unset;
+  color: white;
+  font-weight: 700;
+}
+
+@keyframes highlight-pop {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.typewriter-cursor {
+  display: inline;
+  background: linear-gradient(135deg, #FF007A 0%, #FF5CAA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .typewriter-container {
+    font-size: 28px;
+  }
+
+  .typewriter-dynamic {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-container {
+    font-size: 24px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .typewriter-dynamic {
+    min-width: 80px;
+  }
+}
